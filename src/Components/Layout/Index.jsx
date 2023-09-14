@@ -3,7 +3,9 @@ const Layout = ({ children }) => {
   return (
     <>
       <NavBar />
-      <div className="flex flex-col mt-20">{children}</div>
+      <div className="flex flex-col justify-center items-center">
+        {children}
+      </div>
     </>
   );
 };
