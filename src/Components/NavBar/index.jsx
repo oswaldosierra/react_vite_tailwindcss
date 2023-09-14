@@ -87,7 +87,7 @@ function NavBar() {
               isActive ? "underline underline-offset-4" : undefined
             }
           >
-            Electronics
+            My Account
           </NavLink>
         </li>
         <li>

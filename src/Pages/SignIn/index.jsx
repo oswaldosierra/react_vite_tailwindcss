@@ -1,5 +1,10 @@
+import Layout from "../../Components/Layout/Index";
 function SignIn() {
-  return <div>SignIn</div>;
+  return (
+    <Layout>
+      <div>SignIn</div>
+    </Layout>
+  );
 }
 
 export default SignIn;

@@ -1,5 +1,10 @@
+import Layout from "../../Components/Layout/Index";
 function MyOrder() {
-  return <div>MyOrder</div>;
+  return (
+    <Layout>
+      <div>MyOrder</div>
+    </Layout>
+  );
 }
 
 export default MyOrder;
