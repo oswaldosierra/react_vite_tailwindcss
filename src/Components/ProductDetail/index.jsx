@@ -18,6 +18,24 @@ const ProductDetail = () => {
           className="h-6 w-6 text-black cursor-pointer"
         />
       </div>
+      <figure className="px-4">
+        <img
+          className="w-full h-full rounded-lg"
+          src={context.productToShow.images[0]}
+          alt={context.productToShow.title}
+        />
+        <p className="flex flex-col rounded-lg">
+          <span className="font-medium text-2xl mb-2">
+            ${context.productToShow.price}
+          </span>
+          <span className="font-medium text-md">
+            {context.productToShow.title}
+          </span>
+          <span className="font-light text-sm">
+            {context.productToShow.description}
+          </span>
+        </p>
+      </figure>
     </aside>
   );
 };
