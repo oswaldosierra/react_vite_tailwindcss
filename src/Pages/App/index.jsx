@@ -6,6 +6,7 @@ import MyOrders from "../MyOrders";
 import NotFound from "../NotFound";
 import SignIn from "../SignIn";
 import { ShoppingCartProvider } from "../../Context";
+import CheckoutSideMenu from "../../Components/CheckoutSideMenu";
 
 const AppRoutes = () => {
   let routes = useRoutes([
@@ -43,6 +44,7 @@ const App = () => {
     <ShoppingCartProvider>
       <BrowserRouter>
         <AppRoutes />
+        <CheckoutSideMenu />
       </BrowserRouter>
     </ShoppingCartProvider>
   );

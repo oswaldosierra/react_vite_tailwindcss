@@ -7,9 +7,13 @@ const Card = (item) => {
   const showProduct = (productDetail) => {
     context.openProductDetail();
     context.setProductToShow(productDetail);
+    context.closeCheckoutSideMenu();
   };
 
-  const addProductsToCart = (productsData) => {
+  const addProductsToCart = (event, productsData) => {
+    event.stopPropagation();
+    context.closeProductDetail();
+    context.openCheckoutSideMenu();
     context.setCartProducts([...context.cartProducts, productsData]);
     context.setCount(context.count + 1);
   };
@@ -29,8 +33,8 @@ const Card = (item) => {
           alt={item.data.title}
         />
         <div
-          onClick={() => {
-            addProductsToCart(item.data);
+          onClick={(event) => {
+            addProductsToCart(event, item.data);
           }}
           className="absolute top-0 right-0 flex justify-center items-center bg-white w-6 h-6 rounded-full m-2 p-1"
         >
