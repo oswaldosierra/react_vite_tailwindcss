@@ -109,8 +109,8 @@ function NavBar() {
         </li>
         <li className="flex items-center">
           <ShoppingBagIcon
-            onClick={() => context.openCheckoutSideMenu}
-            className="h-6 w-6 mr-3 "
+            onClick={() => context.openCheckoutSideMenu()}
+            className="h-6 w-6 mr-3 cursor-pointer"
           />{" "}
           {context.count}
         </li>
