@@ -21,7 +21,7 @@ const ProductDetail = () => {
       <figure className="px-4">
         <img
           className="w-full h-full rounded-lg"
-          src={context.productToShow.images[0]}
+          src={context.productToShow.images}
           alt={context.productToShow.title}
         />
         <p className="flex flex-col rounded-lg">
