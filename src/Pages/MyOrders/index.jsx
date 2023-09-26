@@ -5,16 +5,14 @@ import { ShoppingCartContext } from "../../Context";
 import { Link } from "react-router-dom";
 function MyOrders() {
   const context = useContext(ShoppingCartContext);
-  console.log(context.order);
   return (
     <Layout>
       <div className="flex items-center justify-center relative w-80 ">
         <h1>My Orders</h1>
       </div>
-      {context.order.map((order) => (
-        <Link to={`/my-orders/${order.id}`}>
+      {context.order.map((order, index) => (
+        <Link to={`/my-orders/${index}`} key={index}>
           <OrdersCard
-            key={order.id}
             totalPrice={order.totalPrice}
             totalProducts={order.totalProducts}
           />
