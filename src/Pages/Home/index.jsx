@@ -9,6 +9,20 @@ function Home() {
   const handleChange = (value) => {
     context.setSearchByTitle(value);
   };
+
+  const renderView = () => {
+    if (context.searchByTitle?.length > 0) {
+      if (context.filteredItems?.length > 0) {
+        return context.filteredItems.map((item) => (
+          <Card key={item.id} data={item} />
+        ));
+      } else {
+        return <span>Not Found Elements</span>;
+      }
+    } else {
+      return context.items.map((item) => <Card key={item.id} data={item} />);
+    }
+  };
   return (
     <Layout>
       <div className="flex items-center justify-center relative w-80 mb-4">
@@ -21,9 +35,7 @@ function Home() {
         onChange={(e) => handleChange(e.target.value)}
       />
       <div className="grid gap-4 grid-cols-4 w-full max-w-screen-lg">
-        {context.items.map((item) => (
-          <Card key={item.id} data={item} />
-        ))}
+        {renderView()}
       </div>
       <ProductDetail />
     </Layout>
